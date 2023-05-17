@@ -1,5 +1,8 @@
 'use strict';
 const cards = document.querySelectorAll('.memory-card');
+const resetBtn = document.querySelector('.btn');
+
+const sound = new Audio('assets/sms-alert-4-daniel_simon.mp3')
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -36,6 +39,16 @@ function disableCards() {
     secondCard.removeEventListener('click', flipCard);
 
     resetBoard();
+
+    if (document.querySelectorAll('.memory-card:not(.flip)').length === 0) {
+        // All cards are turned, show reset button
+        sound.play();
+        const resetBtn = document.createElement('button');
+        resetBtn.textContent = 'Reset';
+        resetBtn.classList.add('reset-btn'); // Add the reset-btn class
+        resetBtn.addEventListener('click', refresh);
+        document.body.appendChild(resetBtn);
+    }
 }
 
 function unflipCards() {
@@ -61,4 +74,9 @@ function resetBoard() {
     });
 })();
 
+function refresh() {
+    location.reload(); // Refreshes the page
+};
+
 cards.forEach(card => card.addEventListener('click', flipCard));
+// resetBtn.addEventListener('click', refresh)
