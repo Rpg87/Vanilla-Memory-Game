@@ -132,5 +132,6 @@ If you want to know more about me or if you have a fun project and you need help
 <img src="img/line4.png"> </img>
 
 <h2>If you have made it this far, I thank you from the bottom of my heart. 
-<br></br>
-(=^･<span style="color:Hotpink">ω</span>･^=) </h2>
+</h2>
+ <h2 align= "center">
+(=^･ω･^=) </h2>
